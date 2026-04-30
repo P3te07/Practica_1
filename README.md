@@ -49,4 +49,3 @@ Printre principalele cerințe funcționale se includ:
 - actualizarea datelor: în urma accesării "Refresh", datele din DGV se vor actualiza,
 - căutarea datelor după ID sau alt criteriu: căutarea se va realiza după criteriul introdus în searchbar. Dacă este introdus un ID, se vor afișa doar datele care satisfac condiția, în DGV,
 - crearea unui raport asupra datelor: la accesarea butonului "Raport", automat se va genera și exporta un raport în format PDF care conține toate datele relevante pentru ficare tabel;
-
