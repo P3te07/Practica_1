@@ -29,48 +29,49 @@
         private void InitializeComponent()
         {
             tabPage2 = new TabPage();
-            btnSearchIn = new Button();
-            btnRefreshIn = new Button();
-            dgvInregistrari = new DataGridView();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            txtSearchIn = new TextBox();
-            txtIdClient = new TextBox();
-            txtIdAbonament = new TextBox();
-            txtDataStart = new TextBox();
-            txtDataFinish = new TextBox();
-            btnModificaIn = new Button();
             btnDeleteIn = new Button();
+            btnModificaIn = new Button();
+            txtDataFinish = new TextBox();
+            txtDataStart = new TextBox();
+            txtIdAbonament = new TextBox();
+            txtIdClient = new TextBox();
+            txtSearchIn = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            dgvInregistrari = new DataGridView();
+            btnRefreshIn = new Button();
+            btnSearchIn = new Button();
             tabPage1 = new TabPage();
-            btnSearchAb = new Button();
-            btnRefreshAb = new Button();
-            dgvAbonamente = new DataGridView();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            txtSearchAb = new TextBox();
-            txtTipAb = new TextBox();
-            txtPretAb = new TextBox();
-            txtGradAb = new TextBox();
-            btnModificaAb = new Button();
             btnDeleteAb = new Button();
+            btnModificaAb = new Button();
+            txtGradAb = new TextBox();
+            txtPretAb = new TextBox();
+            txtTipAb = new TextBox();
+            txtSearchAb = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            dgvAbonamente = new DataGridView();
+            btnRefreshAb = new Button();
+            btnSearchAb = new Button();
             tabPageClienti = new TabPage();
-            btnCautaCl = new Button();
-            btnRefreshCl = new Button();
-            dgvClienti = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            txtSearch = new TextBox();
-            txtNumePrenume = new TextBox();
-            txtDataNasterii = new TextBox();
-            txtTelefonCl = new TextBox();
-            txtEmailCl = new TextBox();
-            btnModificaCl = new Button();
+            label5 = new Label();
             btnDeleteCl = new Button();
+            btnModificaCl = new Button();
+            txtEmailCl = new TextBox();
+            txtTelefonCl = new TextBox();
+            txtDataNasterii = new TextBox();
+            txtNumePrenume = new TextBox();
+            txtSearch = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            dgvClienti = new DataGridView();
+            btnRefreshCl = new Button();
+            btnCautaCl = new Button();
             tabControlMain = new TabControl();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).BeginInit();
@@ -105,102 +106,14 @@
             tabPage2.Text = "Inregistrari";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnSearchIn
+            // btnDeleteIn
             // 
-            btnSearchIn.Location = new Point(377, 19);
-            btnSearchIn.Name = "btnSearchIn";
-            btnSearchIn.Size = new Size(82, 26);
-            btnSearchIn.TabIndex = 1;
-            btnSearchIn.Text = "Cauta";
-            btnSearchIn.UseVisualStyleBackColor = true;
-            // 
-            // btnRefreshIn
-            // 
-            btnRefreshIn.Location = new Point(539, 19);
-            btnRefreshIn.Name = "btnRefreshIn";
-            btnRefreshIn.Size = new Size(82, 26);
-            btnRefreshIn.TabIndex = 2;
-            btnRefreshIn.Text = "Refresh";
-            btnRefreshIn.UseVisualStyleBackColor = true;
-            // 
-            // dgvInregistrari
-            // 
-            dgvInregistrari.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInregistrari.Location = new Point(20, 63);
-            dgvInregistrari.Name = "dgvInregistrari";
-            dgvInregistrari.Size = new Size(735, 211);
-            dgvInregistrari.TabIndex = 3;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(23, 308);
-            label12.Name = "label12";
-            label12.Size = new Size(51, 15);
-            label12.TabIndex = 5;
-            label12.Text = "Id Client";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(23, 360);
-            label11.Name = "label11";
-            label11.Size = new Size(83, 15);
-            label11.TabIndex = 7;
-            label11.Text = "Id Abonament";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(358, 308);
-            label10.Name = "label10";
-            label10.Size = new Size(58, 15);
-            label10.TabIndex = 9;
-            label10.Text = "Data Start";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(358, 360);
-            label9.Name = "label9";
-            label9.Size = new Size(65, 15);
-            label9.TabIndex = 10;
-            label9.Text = "Data Finish";
-            // 
-            // txtSearchIn
-            // 
-            txtSearchIn.Location = new Point(20, 19);
-            txtSearchIn.Name = "txtSearchIn";
-            txtSearchIn.Size = new Size(332, 23);
-            txtSearchIn.TabIndex = 0;
-            // 
-            // txtIdClient
-            // 
-            txtIdClient.Location = new Point(140, 302);
-            txtIdClient.Name = "txtIdClient";
-            txtIdClient.Size = new Size(145, 23);
-            txtIdClient.TabIndex = 4;
-            // 
-            // txtIdAbonament
-            // 
-            txtIdAbonament.Location = new Point(140, 354);
-            txtIdAbonament.Name = "txtIdAbonament";
-            txtIdAbonament.Size = new Size(145, 23);
-            txtIdAbonament.TabIndex = 6;
-            // 
-            // txtDataStart
-            // 
-            txtDataStart.Location = new Point(453, 302);
-            txtDataStart.Name = "txtDataStart";
-            txtDataStart.Size = new Size(145, 23);
-            txtDataStart.TabIndex = 8;
-            // 
-            // txtDataFinish
-            // 
-            txtDataFinish.Location = new Point(453, 354);
-            txtDataFinish.Name = "txtDataFinish";
-            txtDataFinish.Size = new Size(145, 23);
-            txtDataFinish.TabIndex = 11;
+            btnDeleteIn.Location = new Point(654, 346);
+            btnDeleteIn.Name = "btnDeleteIn";
+            btnDeleteIn.Size = new Size(82, 26);
+            btnDeleteIn.TabIndex = 13;
+            btnDeleteIn.Text = "Sterge";
+            btnDeleteIn.UseVisualStyleBackColor = true;
             // 
             // btnModificaIn
             // 
@@ -211,14 +124,102 @@
             btnModificaIn.Text = "Modifica";
             btnModificaIn.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteIn
+            // txtDataFinish
             // 
-            btnDeleteIn.Location = new Point(654, 346);
-            btnDeleteIn.Name = "btnDeleteIn";
-            btnDeleteIn.Size = new Size(82, 26);
-            btnDeleteIn.TabIndex = 13;
-            btnDeleteIn.Text = "Sterge";
-            btnDeleteIn.UseVisualStyleBackColor = true;
+            txtDataFinish.Location = new Point(453, 354);
+            txtDataFinish.Name = "txtDataFinish";
+            txtDataFinish.Size = new Size(145, 23);
+            txtDataFinish.TabIndex = 11;
+            // 
+            // txtDataStart
+            // 
+            txtDataStart.Location = new Point(453, 302);
+            txtDataStart.Name = "txtDataStart";
+            txtDataStart.Size = new Size(145, 23);
+            txtDataStart.TabIndex = 8;
+            // 
+            // txtIdAbonament
+            // 
+            txtIdAbonament.Location = new Point(140, 354);
+            txtIdAbonament.Name = "txtIdAbonament";
+            txtIdAbonament.Size = new Size(145, 23);
+            txtIdAbonament.TabIndex = 6;
+            // 
+            // txtIdClient
+            // 
+            txtIdClient.Location = new Point(140, 302);
+            txtIdClient.Name = "txtIdClient";
+            txtIdClient.Size = new Size(145, 23);
+            txtIdClient.TabIndex = 4;
+            // 
+            // txtSearchIn
+            // 
+            txtSearchIn.Location = new Point(20, 19);
+            txtSearchIn.Name = "txtSearchIn";
+            txtSearchIn.Size = new Size(332, 23);
+            txtSearchIn.TabIndex = 0;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(358, 360);
+            label9.Name = "label9";
+            label9.Size = new Size(65, 15);
+            label9.TabIndex = 10;
+            label9.Text = "Data Finish";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(358, 308);
+            label10.Name = "label10";
+            label10.Size = new Size(58, 15);
+            label10.TabIndex = 9;
+            label10.Text = "Data Start";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(23, 360);
+            label11.Name = "label11";
+            label11.Size = new Size(83, 15);
+            label11.TabIndex = 7;
+            label11.Text = "Id Abonament";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(23, 308);
+            label12.Name = "label12";
+            label12.Size = new Size(51, 15);
+            label12.TabIndex = 5;
+            label12.Text = "Id Client";
+            // 
+            // dgvInregistrari
+            // 
+            dgvInregistrari.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInregistrari.Location = new Point(20, 63);
+            dgvInregistrari.Name = "dgvInregistrari";
+            dgvInregistrari.Size = new Size(735, 211);
+            dgvInregistrari.TabIndex = 3;
+            // 
+            // btnRefreshIn
+            // 
+            btnRefreshIn.Location = new Point(539, 19);
+            btnRefreshIn.Name = "btnRefreshIn";
+            btnRefreshIn.Size = new Size(82, 26);
+            btnRefreshIn.TabIndex = 2;
+            btnRefreshIn.Text = "Refresh";
+            btnRefreshIn.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchIn
+            // 
+            btnSearchIn.Location = new Point(377, 19);
+            btnSearchIn.Name = "btnSearchIn";
+            btnSearchIn.Size = new Size(82, 26);
+            btnSearchIn.TabIndex = 1;
+            btnSearchIn.Text = "Cauta";
+            btnSearchIn.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -242,86 +243,14 @@
             tabPage1.Text = "Abonamente";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnSearchAb
+            // btnDeleteAb
             // 
-            btnSearchAb.Location = new Point(377, 19);
-            btnSearchAb.Name = "btnSearchAb";
-            btnSearchAb.Size = new Size(82, 26);
-            btnSearchAb.TabIndex = 1;
-            btnSearchAb.Text = "Cauta";
-            btnSearchAb.UseVisualStyleBackColor = true;
-            // 
-            // btnRefreshAb
-            // 
-            btnRefreshAb.Location = new Point(539, 19);
-            btnRefreshAb.Name = "btnRefreshAb";
-            btnRefreshAb.Size = new Size(82, 26);
-            btnRefreshAb.TabIndex = 2;
-            btnRefreshAb.Text = "Refresh";
-            btnRefreshAb.UseVisualStyleBackColor = true;
-            // 
-            // dgvAbonamente
-            // 
-            dgvAbonamente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAbonamente.Location = new Point(20, 63);
-            dgvAbonamente.Name = "dgvAbonamente";
-            dgvAbonamente.Size = new Size(735, 211);
-            dgvAbonamente.TabIndex = 3;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(23, 308);
-            label8.Name = "label8";
-            label8.Size = new Size(24, 15);
-            label8.TabIndex = 5;
-            label8.Text = "Tip";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(23, 360);
-            label7.Name = "label7";
-            label7.Size = new Size(28, 15);
-            label7.TabIndex = 7;
-            label7.Text = "Pret";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(358, 308);
-            label6.Name = "label6";
-            label6.Size = new Size(66, 15);
-            label6.TabIndex = 9;
-            label6.Text = "Grad Acces";
-            // 
-            // txtSearchAb
-            // 
-            txtSearchAb.Location = new Point(20, 19);
-            txtSearchAb.Name = "txtSearchAb";
-            txtSearchAb.Size = new Size(332, 23);
-            txtSearchAb.TabIndex = 0;
-            // 
-            // txtTipAb
-            // 
-            txtTipAb.Location = new Point(140, 302);
-            txtTipAb.Name = "txtTipAb";
-            txtTipAb.Size = new Size(145, 23);
-            txtTipAb.TabIndex = 4;
-            // 
-            // txtPretAb
-            // 
-            txtPretAb.Location = new Point(140, 354);
-            txtPretAb.Name = "txtPretAb";
-            txtPretAb.Size = new Size(145, 23);
-            txtPretAb.TabIndex = 6;
-            // 
-            // txtGradAb
-            // 
-            txtGradAb.Location = new Point(430, 302);
-            txtGradAb.Name = "txtGradAb";
-            txtGradAb.Size = new Size(145, 23);
-            txtGradAb.TabIndex = 8;
+            btnDeleteAb.Location = new Point(654, 346);
+            btnDeleteAb.Name = "btnDeleteAb";
+            btnDeleteAb.Size = new Size(82, 26);
+            btnDeleteAb.TabIndex = 13;
+            btnDeleteAb.Text = "Sterge";
+            btnDeleteAb.UseVisualStyleBackColor = true;
             // 
             // btnModificaAb
             // 
@@ -332,17 +261,90 @@
             btnModificaAb.Text = "Modifica";
             btnModificaAb.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteAb
+            // txtGradAb
             // 
-            btnDeleteAb.Location = new Point(654, 346);
-            btnDeleteAb.Name = "btnDeleteAb";
-            btnDeleteAb.Size = new Size(82, 26);
-            btnDeleteAb.TabIndex = 13;
-            btnDeleteAb.Text = "Sterge";
-            btnDeleteAb.UseVisualStyleBackColor = true;
+            txtGradAb.Location = new Point(430, 302);
+            txtGradAb.Name = "txtGradAb";
+            txtGradAb.Size = new Size(145, 23);
+            txtGradAb.TabIndex = 8;
+            // 
+            // txtPretAb
+            // 
+            txtPretAb.Location = new Point(140, 354);
+            txtPretAb.Name = "txtPretAb";
+            txtPretAb.Size = new Size(145, 23);
+            txtPretAb.TabIndex = 6;
+            // 
+            // txtTipAb
+            // 
+            txtTipAb.Location = new Point(140, 302);
+            txtTipAb.Name = "txtTipAb";
+            txtTipAb.Size = new Size(145, 23);
+            txtTipAb.TabIndex = 4;
+            // 
+            // txtSearchAb
+            // 
+            txtSearchAb.Location = new Point(20, 19);
+            txtSearchAb.Name = "txtSearchAb";
+            txtSearchAb.Size = new Size(332, 23);
+            txtSearchAb.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(358, 308);
+            label6.Name = "label6";
+            label6.Size = new Size(66, 15);
+            label6.TabIndex = 9;
+            label6.Text = "Grad Acces";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(23, 360);
+            label7.Name = "label7";
+            label7.Size = new Size(28, 15);
+            label7.TabIndex = 7;
+            label7.Text = "Pret";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(23, 308);
+            label8.Name = "label8";
+            label8.Size = new Size(24, 15);
+            label8.TabIndex = 5;
+            label8.Text = "Tip";
+            // 
+            // dgvAbonamente
+            // 
+            dgvAbonamente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAbonamente.Location = new Point(20, 63);
+            dgvAbonamente.Name = "dgvAbonamente";
+            dgvAbonamente.Size = new Size(735, 211);
+            dgvAbonamente.TabIndex = 3;
+            // 
+            // btnRefreshAb
+            // 
+            btnRefreshAb.Location = new Point(539, 19);
+            btnRefreshAb.Name = "btnRefreshAb";
+            btnRefreshAb.Size = new Size(82, 26);
+            btnRefreshAb.TabIndex = 2;
+            btnRefreshAb.Text = "Refresh";
+            btnRefreshAb.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchAb
+            // 
+            btnSearchAb.Location = new Point(377, 19);
+            btnSearchAb.Name = "btnSearchAb";
+            btnSearchAb.Size = new Size(82, 26);
+            btnSearchAb.TabIndex = 1;
+            btnSearchAb.Text = "Cauta";
+            btnSearchAb.UseVisualStyleBackColor = true;
             // 
             // tabPageClienti
             // 
+            tabPageClienti.Controls.Add(label5);
             tabPageClienti.Controls.Add(btnDeleteCl);
             tabPageClienti.Controls.Add(btnModificaCl);
             tabPageClienti.Controls.Add(txtEmailCl);
@@ -365,102 +367,23 @@
             tabPageClienti.Text = "Clienti";
             tabPageClienti.UseVisualStyleBackColor = true;
             // 
-            // btnCautaCl
+            // label5
             // 
-            btnCautaCl.Location = new Point(377, 19);
-            btnCautaCl.Name = "btnCautaCl";
-            btnCautaCl.Size = new Size(82, 26);
-            btnCautaCl.TabIndex = 1;
-            btnCautaCl.Text = "Cauta";
-            btnCautaCl.UseVisualStyleBackColor = true;
+            label5.AutoSize = true;
+            label5.Location = new Point(472, 277);
+            label5.Name = "label5";
+            label5.Size = new Size(38, 15);
+            label5.TabIndex = 14;
+            label5.Text = "label5";
             // 
-            // btnRefreshCl
+            // btnDeleteCl
             // 
-            btnRefreshCl.Location = new Point(539, 19);
-            btnRefreshCl.Name = "btnRefreshCl";
-            btnRefreshCl.Size = new Size(82, 26);
-            btnRefreshCl.TabIndex = 2;
-            btnRefreshCl.Text = "Refresh";
-            btnRefreshCl.UseVisualStyleBackColor = true;
-            // 
-            // dgvClienti
-            // 
-            dgvClienti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClienti.Location = new Point(20, 63);
-            dgvClienti.Name = "dgvClienti";
-            dgvClienti.Size = new Size(735, 211);
-            dgvClienti.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(20, 305);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 15);
-            label1.TabIndex = 5;
-            label1.Text = "Nume Prenume";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(20, 357);
-            label2.Name = "label2";
-            label2.Size = new Size(74, 15);
-            label2.TabIndex = 7;
-            label2.Text = "Data Nasterii";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(355, 305);
-            label3.Name = "label3";
-            label3.Size = new Size(46, 15);
-            label3.TabIndex = 9;
-            label3.Text = "Telefon";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(355, 357);
-            label4.Name = "label4";
-            label4.Size = new Size(36, 15);
-            label4.TabIndex = 10;
-            label4.Text = "Email";
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(20, 19);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(332, 23);
-            txtSearch.TabIndex = 0;
-            // 
-            // txtNumePrenume
-            // 
-            txtNumePrenume.Location = new Point(140, 302);
-            txtNumePrenume.Name = "txtNumePrenume";
-            txtNumePrenume.Size = new Size(145, 23);
-            txtNumePrenume.TabIndex = 4;
-            // 
-            // txtDataNasterii
-            // 
-            txtDataNasterii.Location = new Point(140, 354);
-            txtDataNasterii.Name = "txtDataNasterii";
-            txtDataNasterii.Size = new Size(145, 23);
-            txtDataNasterii.TabIndex = 6;
-            // 
-            // txtTelefonCl
-            // 
-            txtTelefonCl.Location = new Point(425, 302);
-            txtTelefonCl.Name = "txtTelefonCl";
-            txtTelefonCl.Size = new Size(145, 23);
-            txtTelefonCl.TabIndex = 8;
-            // 
-            // txtEmailCl
-            // 
-            txtEmailCl.Location = new Point(425, 354);
-            txtEmailCl.Name = "txtEmailCl";
-            txtEmailCl.Size = new Size(145, 23);
-            txtEmailCl.TabIndex = 11;
+            btnDeleteCl.Location = new Point(654, 346);
+            btnDeleteCl.Name = "btnDeleteCl";
+            btnDeleteCl.Size = new Size(82, 26);
+            btnDeleteCl.TabIndex = 13;
+            btnDeleteCl.Text = "Sterge";
+            btnDeleteCl.UseVisualStyleBackColor = true;
             // 
             // btnModificaCl
             // 
@@ -471,14 +394,102 @@
             btnModificaCl.Text = "Modifica";
             btnModificaCl.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteCl
+            // txtEmailCl
             // 
-            btnDeleteCl.Location = new Point(654, 346);
-            btnDeleteCl.Name = "btnDeleteCl";
-            btnDeleteCl.Size = new Size(82, 26);
-            btnDeleteCl.TabIndex = 13;
-            btnDeleteCl.Text = "Sterge";
-            btnDeleteCl.UseVisualStyleBackColor = true;
+            txtEmailCl.Location = new Point(425, 354);
+            txtEmailCl.Name = "txtEmailCl";
+            txtEmailCl.Size = new Size(145, 23);
+            txtEmailCl.TabIndex = 11;
+            // 
+            // txtTelefonCl
+            // 
+            txtTelefonCl.Location = new Point(425, 302);
+            txtTelefonCl.Name = "txtTelefonCl";
+            txtTelefonCl.Size = new Size(145, 23);
+            txtTelefonCl.TabIndex = 8;
+            // 
+            // txtDataNasterii
+            // 
+            txtDataNasterii.Location = new Point(140, 354);
+            txtDataNasterii.Name = "txtDataNasterii";
+            txtDataNasterii.Size = new Size(145, 23);
+            txtDataNasterii.TabIndex = 6;
+            // 
+            // txtNumePrenume
+            // 
+            txtNumePrenume.Location = new Point(140, 302);
+            txtNumePrenume.Name = "txtNumePrenume";
+            txtNumePrenume.Size = new Size(145, 23);
+            txtNumePrenume.TabIndex = 4;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(20, 19);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(332, 23);
+            txtSearch.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(355, 357);
+            label4.Name = "label4";
+            label4.Size = new Size(36, 15);
+            label4.TabIndex = 10;
+            label4.Text = "Email";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(355, 305);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Telefon";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(20, 357);
+            label2.Name = "label2";
+            label2.Size = new Size(74, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Data Nasterii";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(20, 305);
+            label1.Name = "label1";
+            label1.Size = new Size(91, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Nume Prenume";
+            // 
+            // dgvClienti
+            // 
+            dgvClienti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClienti.Location = new Point(20, 63);
+            dgvClienti.Name = "dgvClienti";
+            dgvClienti.Size = new Size(735, 211);
+            dgvClienti.TabIndex = 3;
+            // 
+            // btnRefreshCl
+            // 
+            btnRefreshCl.Location = new Point(539, 19);
+            btnRefreshCl.Name = "btnRefreshCl";
+            btnRefreshCl.Size = new Size(82, 26);
+            btnRefreshCl.TabIndex = 2;
+            btnRefreshCl.Text = "Refresh";
+            btnRefreshCl.UseVisualStyleBackColor = true;
+            // 
+            // btnCautaCl
+            // 
+            btnCautaCl.Location = new Point(377, 19);
+            btnCautaCl.Name = "btnCautaCl";
+            btnCautaCl.Size = new Size(82, 26);
+            btnCautaCl.TabIndex = 1;
+            btnCautaCl.Text = "Cauta";
+            btnCautaCl.UseVisualStyleBackColor = true;
             // 
             // tabControlMain
             // 
@@ -558,5 +569,6 @@
         private Button btnRefreshCl;
         private Button btnCautaCl;
         private TabControl tabControlMain;
+        private Label label5;
     }
 }
