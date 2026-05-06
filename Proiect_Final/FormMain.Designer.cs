@@ -54,6 +54,7 @@
             btnMenuAbonamente.TabIndex = 1;
             btnMenuAbonamente.Text = "Abonamente";
             btnMenuAbonamente.UseVisualStyleBackColor = true;
+            btnMenuAbonamente.Click += btnMenuAbonamente_Click;
             // 
             // btnMenuInregistrari
             // 

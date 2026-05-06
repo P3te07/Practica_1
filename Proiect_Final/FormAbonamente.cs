@@ -14,5 +14,16 @@ namespace Proiect_Final
         {
             InitializeComponent();
         }
+
+        private void btnRedMainAb_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMain Main = new FormMain(); 
+            Main.Show();
+        }
+        private void FormAbonamente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
