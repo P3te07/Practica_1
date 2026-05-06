@@ -1,6 +1,6 @@
 ﻿namespace Proiect_Final
 {
-    partial class Form1
+    partial class FormClienti
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             tabPage2 = new TabPage();
+            btnAdaugaIn = new Button();
             btnDeleteIn = new Button();
             btnModificaIn = new Button();
             txtDataFinish = new TextBox();
@@ -44,6 +45,7 @@
             btnRefreshIn = new Button();
             btnSearchIn = new Button();
             tabPage1 = new TabPage();
+            btnAdaugaAb = new Button();
             btnDeleteAb = new Button();
             btnModificaAb = new Button();
             txtGradAb = new TextBox();
@@ -57,6 +59,8 @@
             btnRefreshAb = new Button();
             btnSearchAb = new Button();
             tabPageClienti = new TabPage();
+            btnRedMainCl = new Button();
+            btnAdaugaCl = new Button();
             btnDeleteCl = new Button();
             btnModificaCl = new Button();
             txtEmailCl = new TextBox();
@@ -72,6 +76,8 @@
             btnRefreshCl = new Button();
             btnCautaCl = new Button();
             tabControlMain = new TabControl();
+            button1 = new Button();
+            btnRedMainIn = new Button();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).BeginInit();
             tabPage1.SuspendLayout();
@@ -83,6 +89,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnRedMainIn);
+            tabPage2.Controls.Add(btnAdaugaIn);
             tabPage2.Controls.Add(btnDeleteIn);
             tabPage2.Controls.Add(btnModificaIn);
             tabPage2.Controls.Add(txtDataFinish);
@@ -105,9 +113,18 @@
             tabPage2.Text = "Inregistrari";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnAdaugaIn
+            // 
+            btnAdaugaIn.Location = new Point(654, 280);
+            btnAdaugaIn.Name = "btnAdaugaIn";
+            btnAdaugaIn.Size = new Size(82, 26);
+            btnAdaugaIn.TabIndex = 15;
+            btnAdaugaIn.Text = "Adauga";
+            btnAdaugaIn.UseVisualStyleBackColor = true;
+            // 
             // btnDeleteIn
             // 
-            btnDeleteIn.Location = new Point(654, 346);
+            btnDeleteIn.Location = new Point(654, 371);
             btnDeleteIn.Name = "btnDeleteIn";
             btnDeleteIn.Size = new Size(82, 26);
             btnDeleteIn.TabIndex = 13;
@@ -116,7 +133,7 @@
             // 
             // btnModificaIn
             // 
-            btnModificaIn.Location = new Point(654, 299);
+            btnModificaIn.Location = new Point(654, 328);
             btnModificaIn.Name = "btnModificaIn";
             btnModificaIn.Size = new Size(82, 26);
             btnModificaIn.TabIndex = 12;
@@ -222,6 +239,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(btnAdaugaAb);
             tabPage1.Controls.Add(btnDeleteAb);
             tabPage1.Controls.Add(btnModificaAb);
             tabPage1.Controls.Add(txtGradAb);
@@ -242,9 +261,18 @@
             tabPage1.Text = "Abonamente";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnAdaugaAb
+            // 
+            btnAdaugaAb.Location = new Point(654, 280);
+            btnAdaugaAb.Name = "btnAdaugaAb";
+            btnAdaugaAb.Size = new Size(82, 26);
+            btnAdaugaAb.TabIndex = 15;
+            btnAdaugaAb.Text = "Adauga";
+            btnAdaugaAb.UseVisualStyleBackColor = true;
+            // 
             // btnDeleteAb
             // 
-            btnDeleteAb.Location = new Point(654, 346);
+            btnDeleteAb.Location = new Point(654, 372);
             btnDeleteAb.Name = "btnDeleteAb";
             btnDeleteAb.Size = new Size(82, 26);
             btnDeleteAb.TabIndex = 13;
@@ -253,7 +281,7 @@
             // 
             // btnModificaAb
             // 
-            btnModificaAb.Location = new Point(654, 299);
+            btnModificaAb.Location = new Point(654, 331);
             btnModificaAb.Name = "btnModificaAb";
             btnModificaAb.Size = new Size(82, 26);
             btnModificaAb.TabIndex = 12;
@@ -343,6 +371,8 @@
             // 
             // tabPageClienti
             // 
+            tabPageClienti.Controls.Add(btnRedMainCl);
+            tabPageClienti.Controls.Add(btnAdaugaCl);
             tabPageClienti.Controls.Add(btnDeleteCl);
             tabPageClienti.Controls.Add(btnModificaCl);
             tabPageClienti.Controls.Add(txtEmailCl);
@@ -365,9 +395,28 @@
             tabPageClienti.Text = "Clienti";
             tabPageClienti.UseVisualStyleBackColor = true;
             // 
+            // btnRedMainCl
+            // 
+            btnRedMainCl.Location = new Point(663, 0);
+            btnRedMainCl.Name = "btnRedMainCl";
+            btnRedMainCl.Size = new Size(126, 23);
+            btnRedMainCl.TabIndex = 15;
+            btnRedMainCl.Text = "Inapoi la main";
+            btnRedMainCl.UseVisualStyleBackColor = true;
+            btnRedMainCl.Click += btnRedMainCl_Click;
+            // 
+            // btnAdaugaCl
+            // 
+            btnAdaugaCl.Location = new Point(654, 294);
+            btnAdaugaCl.Name = "btnAdaugaCl";
+            btnAdaugaCl.Size = new Size(82, 26);
+            btnAdaugaCl.TabIndex = 14;
+            btnAdaugaCl.Text = "Adauga";
+            btnAdaugaCl.UseVisualStyleBackColor = true;
+            // 
             // btnDeleteCl
             // 
-            btnDeleteCl.Location = new Point(654, 346);
+            btnDeleteCl.Location = new Point(654, 374);
             btnDeleteCl.Name = "btnDeleteCl";
             btnDeleteCl.Size = new Size(82, 26);
             btnDeleteCl.TabIndex = 13;
@@ -376,7 +425,7 @@
             // 
             // btnModificaCl
             // 
-            btnModificaCl.Location = new Point(654, 299);
+            btnModificaCl.Location = new Point(654, 332);
             btnModificaCl.Name = "btnModificaCl";
             btnModificaCl.Size = new Size(82, 26);
             btnModificaCl.TabIndex = 12;
@@ -493,14 +542,33 @@
             tabControlMain.Size = new Size(797, 447);
             tabControlMain.TabIndex = 0;
             // 
-            // Form1
+            // button1
+            // 
+            button1.Location = new Point(663, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(126, 23);
+            button1.TabIndex = 16;
+            button1.Text = "Inapoi la main";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // btnRedMainIn
+            // 
+            btnRedMainIn.Location = new Point(663, 0);
+            btnRedMainIn.Name = "btnRedMainIn";
+            btnRedMainIn.Size = new Size(126, 23);
+            btnRedMainIn.TabIndex = 16;
+            btnRedMainIn.Text = "Inapoi la main";
+            btnRedMainIn.UseVisualStyleBackColor = true;
+            // 
+            // FormClienti
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tabControlMain);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "FormClienti";
+            Text = "Clienti";
+            FormClosed += FormClienti_FormClosed;
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).EndInit();
@@ -560,5 +628,11 @@
         private Button btnRefreshCl;
         private Button btnCautaCl;
         private TabControl tabControlMain;
+        private Button btnAdaugaIn;
+        private Button btnAdaugaAb;
+        private Button btnAdaugaCl;
+        private Button btnRedMainCl;
+        private Button btnRedMainIn;
+        private Button button1;
     }
 }
