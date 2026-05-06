@@ -57,7 +57,6 @@
             btnRefreshAb = new Button();
             btnSearchAb = new Button();
             tabPageClienti = new TabPage();
-            label5 = new Label();
             btnDeleteCl = new Button();
             btnModificaCl = new Button();
             txtEmailCl = new TextBox();
@@ -344,7 +343,6 @@
             // 
             // tabPageClienti
             // 
-            tabPageClienti.Controls.Add(label5);
             tabPageClienti.Controls.Add(btnDeleteCl);
             tabPageClienti.Controls.Add(btnModificaCl);
             tabPageClienti.Controls.Add(txtEmailCl);
@@ -366,15 +364,6 @@
             tabPageClienti.TabIndex = 0;
             tabPageClienti.Text = "Clienti";
             tabPageClienti.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(472, 277);
-            label5.Name = "label5";
-            label5.Size = new Size(38, 15);
-            label5.TabIndex = 14;
-            label5.Text = "label5";
             // 
             // btnDeleteCl
             // 
@@ -470,6 +459,8 @@
             dgvClienti.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClienti.Location = new Point(20, 63);
             dgvClienti.Name = "dgvClienti";
+            dgvClienti.ReadOnly = true;
+            dgvClienti.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvClienti.Size = new Size(735, 211);
             dgvClienti.TabIndex = 3;
             // 
@@ -569,6 +560,5 @@
         private Button btnRefreshCl;
         private Button btnCautaCl;
         private TabControl tabControlMain;
-        private Label label5;
     }
 }

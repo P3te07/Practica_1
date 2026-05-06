@@ -19,20 +19,6 @@ namespace Proiect_Final.Data
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                try
-                {
-                    connection.Open();
-                    MessageBox.Show("Connection opened successfully.");
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Nu sa conectat");                    
-                    throw;
-                } 
-            }
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     if (parameters != null)

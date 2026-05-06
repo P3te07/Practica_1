@@ -14,7 +14,7 @@ namespace Proiect_Final
         {
             InitializeComponent();
             DbHelper db = new DbHelper();
-            string sql = "SELECT * FROM [dbo].[Clienti]";
+            string sql = "SELECT * FROM Clienti";
             dgvClienti.DataSource = db.Execute(sql);
         }
 
