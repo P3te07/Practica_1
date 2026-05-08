@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnRedMainIn = new Button();
             btnAdaugaIn = new Button();
             btnDeleteIn = new Button();
             btnModificaIn = new Button();
@@ -46,15 +45,6 @@
             btnSearchIn = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).BeginInit();
             SuspendLayout();
-            // 
-            // btnRedMainIn
-            // 
-            btnRedMainIn.Location = new Point(659, 27);
-            btnRedMainIn.Name = "btnRedMainIn";
-            btnRedMainIn.Size = new Size(126, 23);
-            btnRedMainIn.TabIndex = 32;
-            btnRedMainIn.Text = "Inapoi la main";
-            btnRedMainIn.UseVisualStyleBackColor = true;
             // 
             // btnAdaugaIn
             // 
@@ -185,7 +175,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnRedMainIn);
             Controls.Add(btnAdaugaIn);
             Controls.Add(btnDeleteIn);
             Controls.Add(btnModificaIn);
@@ -209,8 +198,6 @@
         }
 
         #endregion
-
-        private Button btnRedMainIn;
         private Button btnAdaugaIn;
         private Button btnDeleteIn;
         private Button btnModificaIn;

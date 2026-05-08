@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnRedMainCl = new Button();
             btnAdaugaCl = new Button();
             btnDeleteCl = new Button();
             btnModificaCl = new Button();
@@ -46,15 +45,6 @@
             btnCautaCl = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClienti).BeginInit();
             SuspendLayout();
-            // 
-            // btnRedMainCl
-            // 
-            btnRedMainCl.Location = new Point(659, 25);
-            btnRedMainCl.Name = "btnRedMainCl";
-            btnRedMainCl.Size = new Size(126, 23);
-            btnRedMainCl.TabIndex = 31;
-            btnRedMainCl.Text = "Inapoi la main";
-            btnRedMainCl.UseVisualStyleBackColor = true;
             // 
             // btnAdaugaCl
             // 
@@ -187,7 +177,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnRedMainCl);
             Controls.Add(btnAdaugaCl);
             Controls.Add(btnDeleteCl);
             Controls.Add(btnModificaCl);
@@ -212,8 +201,6 @@
         }
 
         #endregion
-
-        private Button btnRedMainCl;
         private Button btnAdaugaCl;
         private Button btnDeleteCl;
         private Button btnModificaCl;
