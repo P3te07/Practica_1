@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnRedMainAb = new Button();
             btnAdaugaAb = new Button();
             btnDeleteAb = new Button();
             btnModificaAb = new Button();
@@ -44,16 +43,6 @@
             btnSearchAb = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvAbonamente).BeginInit();
             SuspendLayout();
-            // 
-            // btnRedMainAb
-            // 
-            btnRedMainAb.Location = new Point(659, 26);
-            btnRedMainAb.Name = "btnRedMainAb";
-            btnRedMainAb.Size = new Size(126, 23);
-            btnRedMainAb.TabIndex = 30;
-            btnRedMainAb.Text = "Inapoi la main";
-            btnRedMainAb.UseVisualStyleBackColor = true;
-            btnRedMainAb.Click += btnRedMainAb_Click;
             // 
             // btnAdaugaAb
             // 
@@ -168,7 +157,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnRedMainAb);
             Controls.Add(btnAdaugaAb);
             Controls.Add(btnDeleteAb);
             Controls.Add(btnModificaAb);
@@ -190,8 +178,6 @@
         }
 
         #endregion
-
-        private Button btnRedMainAb;
         private Button btnAdaugaAb;
         private Button btnDeleteAb;
         private Button btnModificaAb;

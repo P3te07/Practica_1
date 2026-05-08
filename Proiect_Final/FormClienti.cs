@@ -2,8 +2,6 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using System;
-
-
 using Proiect_Final.Data;
 using System.Drawing.Text;
 
@@ -21,16 +19,10 @@ namespace Proiect_Final
 
         }
 
-        private void btnRedMainCl_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormMain main = new FormMain();
-            main.Show();
-        }
 
         private void FormClienti_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Application.OpenForms.OfType<FormMain>().FirstOrDefault()?.Show();
         }
 
     }

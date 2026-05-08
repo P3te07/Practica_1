@@ -65,6 +65,7 @@
             btnMenuInregistrari.TabIndex = 2;
             btnMenuInregistrari.Text = "Inregistrari";
             btnMenuInregistrari.UseVisualStyleBackColor = true;
+            btnMenuInregistrari.Click += btnMenuInregistrari_Click;
             // 
             // btnMainReport
             // 

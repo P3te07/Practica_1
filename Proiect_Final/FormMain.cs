@@ -19,27 +19,25 @@ namespace Proiect_Final
         {
             FormClienti Clienti = new FormClienti();
             Clienti.Show();
-            this.Hide();
         }
 
         private void btnMenuAbonamente_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormAbonamente Abonamente = new FormAbonamente();   
+            FormAbonamente Abonamente = new FormAbonamente();
             Abonamente.Show();
         }
 
         private void btnMenuInregistrari_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormInregistrari Inregistrari = new FormInregistrari();
             Inregistrari.Show();
         }
-
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }

@@ -55,7 +55,6 @@
             btnRedMainIn.TabIndex = 32;
             btnRedMainIn.Text = "Inapoi la main";
             btnRedMainIn.UseVisualStyleBackColor = true;
-            btnRedMainIn.Click += btnRedMainIn_Click;
             // 
             // btnAdaugaIn
             // 
