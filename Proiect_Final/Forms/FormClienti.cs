@@ -19,6 +19,20 @@ namespace Proiect_Final
 
         }
 
+        private void FormClienti_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                DbHelper db = new DbHelper();
+                dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
+                MessageBox.Show("Datele au fost încărcate cu succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void FormClienti_FormClosed(object sender, FormClosedEventArgs e)
         {

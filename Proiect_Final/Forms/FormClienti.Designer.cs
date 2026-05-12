@@ -195,6 +195,7 @@
             Name = "FormClienti";
             Text = "Clienti";
             FormClosed += FormClienti_FormClosed;
+            Load += FormClienti_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClienti).EndInit();
             ResumeLayout(false);
             PerformLayout();
