@@ -6,11 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+
 
 namespace Proiect_Final
 {
     public partial class FormInregistrari : Form
     {
+        public int selectedInregistrareId = 0;
         public FormInregistrari()
         {
             InitializeComponent();
@@ -34,7 +37,12 @@ namespace Proiect_Final
                 return;
             }
             DataGridViewRow selectedRow = dgvInregistrari.SelectedRows[0];
-            txtIdClient.Text = selectedRow.Cells["IdClient"].Value.ToString();
+            
+            txtIdClient.Text = selectedRow.Cells["IdClient"].Value.ToString() ?? "";
+            txtIdAbonament.Text = selectedRow.Cells["IdAbonament"].Value.ToString() ?? "";
+            txtDataStart.Text = selectedRow.Cells["DataStart"].Value.ToString() ?? "";
+            txtDataFinish.Text = selectedRow.Cells["DataFinish"].Value.ToString() ?? "";
+            selectedInregistrareId = Convert.ToInt32(selectedRow.Cells["IdInregistrare"].Value);
         }
     }
 }
