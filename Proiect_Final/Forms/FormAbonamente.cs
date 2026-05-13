@@ -24,5 +24,16 @@ namespace Proiect_Final
         {
             Application.OpenForms.OfType<FormMain>().FirstOrDefault()?.Show();
         }
+        private void dgvAbonamente_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvAbonamente.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            DataGridViewRow selectedRow = dgvAbonamente.SelectedRows[0];
+            txtTipAb.Text = selectedRow.Cells["Tip"].Value.ToString();
+            txtPretAb.Text = selectedRow.Cells["Pret"].Value.ToString();
+            txtGradAb.Text = selectedRow.Cells["GradAcces"].Value.ToString();
+        }
     }
 }

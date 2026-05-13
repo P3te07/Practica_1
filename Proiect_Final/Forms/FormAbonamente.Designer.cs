@@ -133,6 +133,7 @@
             dgvAbonamente.Name = "dgvAbonamente";
             dgvAbonamente.Size = new Size(735, 211);
             dgvAbonamente.TabIndex = 20;
+            dgvAbonamente.SelectionChanged += dgvAbonamente_SelectionChanged;
             // 
             // btnRefreshAb
             // 

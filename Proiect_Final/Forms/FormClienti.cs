@@ -9,6 +9,7 @@ namespace Proiect_Final
 {
     public partial class FormClienti : Form
     {
+        private int selectedClientId = 0;
         public FormClienti()
         {
             InitializeComponent();
@@ -21,9 +22,9 @@ namespace Proiect_Final
 
         private void FormClienti_Load(object sender, EventArgs e)
         {
-       
-                DbHelper db = new DbHelper();
-                dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
+
+            DbHelper db = new DbHelper();
+            dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
 
 
         }
@@ -33,5 +34,19 @@ namespace Proiect_Final
             Application.OpenForms.OfType<FormMain>().FirstOrDefault()?.Show();
         }
 
+        private void dgvClienti_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvClienti.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            DataGridViewRow selectedRow = dgvClienti.SelectedRows[0];
+            txtNumePrenume.Text = selectedRow.Cells["NumePrenume"].Value.ToString();
+            txtTelefonCl.Text = selectedRow.Cells["Telefon"].Value.ToString();
+            txtDataNasterii.Text = selectedRow.Cells["DataNasterii"].Value.ToString();
+            txtEmailCl.Text = selectedRow.Cells["Email"].Value.ToString();
+            selectedClientId = Convert.ToInt32(selectedRow.Cells["IdClient"].Value);
+            txtIdClientCl.Text = selectedClientId.ToString();
+        }
     }
 }

@@ -26,5 +26,15 @@ namespace Proiect_Final
         {
             Application.OpenForms.OfType<FormMain>().FirstOrDefault()?.Show();
         }
+
+        private void dgvInregistrari_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvInregistrari.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            DataGridViewRow selectedRow = dgvInregistrari.SelectedRows[0];
+            txtIdClient.Text = selectedRow.Cells["IdClient"].Value.ToString();
+        }
     }
 }

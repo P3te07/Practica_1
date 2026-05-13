@@ -151,6 +151,7 @@
             dgvInregistrari.Name = "dgvInregistrari";
             dgvInregistrari.Size = new Size(735, 211);
             dgvInregistrari.TabIndex = 20;
+            dgvInregistrari.SelectionChanged += dgvInregistrari_SelectionChanged;
             // 
             // btnRefreshIn
             // 

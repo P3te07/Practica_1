@@ -43,6 +43,8 @@
             dgvClienti = new DataGridView();
             btnRefreshCl = new Button();
             btnCautaCl = new Button();
+            label5 = new Label();
+            txtIdClientCl = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvClienti).BeginInit();
             SuspendLayout();
             // 
@@ -153,6 +155,7 @@
             dgvClienti.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvClienti.Size = new Size(735, 211);
             dgvClienti.TabIndex = 19;
+            dgvClienti.SelectionChanged += dgvClienti_SelectionChanged;
             // 
             // btnRefreshCl
             // 
@@ -172,11 +175,29 @@
             btnCautaCl.Text = "Cauta";
             btnCautaCl.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(16, 426);
+            label5.Name = "label5";
+            label5.Size = new Size(18, 15);
+            label5.TabIndex = 31;
+            label5.Text = "ID";
+            // 
+            // txtIdClientCl
+            // 
+            txtIdClientCl.Location = new Point(40, 423);
+            txtIdClientCl.Name = "txtIdClientCl";
+            txtIdClientCl.Size = new Size(67, 23);
+            txtIdClientCl.TabIndex = 32;
+            // 
             // FormClienti
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtIdClientCl);
+            Controls.Add(label5);
             Controls.Add(btnAdaugaCl);
             Controls.Add(btnDeleteCl);
             Controls.Add(btnModificaCl);
@@ -217,5 +238,7 @@
         private DataGridView dgvClienti;
         private Button btnRefreshCl;
         private Button btnCautaCl;
+        private Label label5;
+        private TextBox txtIdClientCl;
     }
 }
