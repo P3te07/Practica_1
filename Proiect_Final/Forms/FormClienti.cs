@@ -1,5 +1,4 @@
 using Microsoft.Data.SqlClient;
-using System.Data;
 using System.Windows.Forms;
 using System;
 using Proiect_Final.Data;
@@ -46,6 +45,40 @@ namespace Proiect_Final
             txtDataNasterii.Text = selectedRow.Cells["DataNasterii"].Value.ToString();
             txtEmailCl.Text = selectedRow.Cells["Email"].Value.ToString();
             selectedClientId = Convert.ToInt32(selectedRow.Cells["IdClient"].Value);
+        }
+
+        private void btnAdaugaCl_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNumePrenume.Text) || string.IsNullOrWhiteSpace(txtEmailCl.Text) || string.IsNullOrWhiteSpace(txtDataNasterii.Text) || string.IsNullOrWhiteSpace(txtTelefonCl.Text))
+            {
+                MessageBox.Show("Toate câmpurile trebuie completate!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!txtEmailCl.Text.Contains("@"))
+            {
+                MessageBox.Show("Adresa de email nu este validă!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTelefonCl.Text.Length != 10)
+            {
+                MessageBox.Show("Numărul de telefon trebuie să aibă 10 cifre!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DbHelper db = new DbHelper();  
+            int nextId = Convert.ToInt32(db.GetScalar("SELECT ISNULL(MAX(IdClient), 0) + 1 FROM Clienti"));
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdClient", nextId),
+                new SqlParameter("@NumePrenume", txtNumePrenume.Text),
+                new SqlParameter("@Telefon", txtTelefonCl.Text),
+                new SqlParameter("@DataNasterii", DateTime.Parse(txtDataNasterii.Text)),
+                new SqlParameter("@Email", txtEmailCl.Text)
+            };
+
+            db.Execute("INSERT INTO Clienti (IdClient, NumePrenume, Telefon, DataNasterii, Email) VALUES (@IdClient, @NumePrenume, @Telefon, @DataNasterii, @Email)", parameters);
+
+            dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
         }
     }
 }

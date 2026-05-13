@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.SqlClient;    
 using System.Data;
+using Microsoft.Data.SqlClient;
 
 
 
@@ -41,6 +41,23 @@ namespace Proiect_Final.Data
                 adapter.Fill(table);
             }
             return table;
+        }
+
+        public object GetScalar(string query, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+                    connection.Open();
+                    return cmd.ExecuteScalar();
+                }
+
+            }
         }
     }
 }
