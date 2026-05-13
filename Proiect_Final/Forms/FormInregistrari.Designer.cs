@@ -192,6 +192,7 @@
             Controls.Add(btnSearchIn);
             Name = "FormInregistrari";
             Text = "FormInregistrari";
+            Load += FormInregistrari_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).EndInit();
             ResumeLayout(false);
             PerformLayout();

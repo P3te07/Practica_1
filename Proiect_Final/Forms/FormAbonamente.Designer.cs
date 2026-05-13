@@ -172,6 +172,7 @@
             Controls.Add(btnSearchAb);
             Name = "FormAbonamente";
             Text = "FormAbonamente";
+            Load += FormAbonamente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAbonamente).EndInit();
             ResumeLayout(false);
             PerformLayout();

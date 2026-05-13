@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proiect_Final.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace Proiect_Final
             InitializeComponent();
         }
 
+        private void FormInregistrari_Load(object sender, EventArgs e)
+        {
+            DbHelper db = new DbHelper();
+            dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
+        }
 
         private void FormInregistrari_FormClosed(object sender, FormClosedEventArgs e)
         {
