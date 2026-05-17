@@ -14,6 +14,7 @@ namespace Proiect_Final.Data
     {
         private readonly string connectionString = @"Server=localhost;Database=SalaFIT;Trusted_Connection=True;TrustServerCertificate=True";
 
+        // metoda pt INSERT, UPDAETE, DELETE etc.
         public int Execute(string query, SqlParameter[] parameters = null)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,6 +31,7 @@ namespace Proiect_Final.Data
             }
         }
 
+        //metoda pt SELECT 
         public DataTable GetData(string query)
         {
             DataTable table = new DataTable();
@@ -43,6 +45,7 @@ namespace Proiect_Final.Data
             return table;
         }
 
+        //metoda pt single value SELECT
         public object GetScalar(string query, SqlParameter[] parameters = null)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
