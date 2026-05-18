@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System;
 using Proiect_Final.Data;
 using System.Drawing.Text;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Proiect_Final
 {
@@ -16,8 +17,14 @@ namespace Proiect_Final
 
         private void btnCautaCl_click(object sender, EventArgs e)
         {
-
-        }
+            DbHelper db = new DbHelper();
+            string search = txtSearch.Text.Trim();
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Search", "%" + search + "%")
+            };
+            dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti WHERE NumePrenume LIKE @Search OR Email LIKE @Search", parameters);
+         }
 
         private void FormClienti_Load(object sender, EventArgs e)
         {
@@ -150,5 +157,12 @@ namespace Proiect_Final
                 MessageBox.Show("Eroare la actualizarea clientului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnRefreshCl_Click(object sender, EventArgs e)
+        {
+            DbHelper db = new DbHelper();
+            dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
+        }
+
     }
 }

@@ -166,6 +166,7 @@
             btnRefreshCl.TabIndex = 18;
             btnRefreshCl.Text = "Refresh";
             btnRefreshCl.UseVisualStyleBackColor = true;
+            btnRefreshCl.Click += btnRefreshCl_Click;
             // 
             // btnCautaCl
             // 
@@ -175,6 +176,7 @@
             btnCautaCl.TabIndex = 17;
             btnCautaCl.Text = "Cauta";
             btnCautaCl.UseVisualStyleBackColor = true;
+            btnCautaCl.Click += btnCautaCl_click;
             // 
             // FormClienti
             // 

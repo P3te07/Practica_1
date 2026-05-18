@@ -32,7 +32,7 @@ namespace Proiect_Final.Data
         }
 
         //metoda pt SELECT 
-        public DataTable GetData(string query)
+        public DataTable GetData(string query, SqlParameter[] parameters = null)
         {
             DataTable table = new DataTable();
 
@@ -40,6 +40,10 @@ namespace Proiect_Final.Data
             {
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                if (parameters != null)
+                {
+                    adapter.SelectCommand.Parameters.AddRange(parameters);
+                }
                 adapter.Fill(table);
             }
             return table;
