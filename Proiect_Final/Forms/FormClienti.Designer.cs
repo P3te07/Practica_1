@@ -74,6 +74,7 @@
             btnModificaCl.TabIndex = 28;
             btnModificaCl.Text = "Modifica";
             btnModificaCl.UseVisualStyleBackColor = true;
+            btnModificaCl.Click += btnUpdateCl_Click;
             // 
             // txtEmailCl
             // 

@@ -25,7 +25,6 @@ namespace Proiect_Final
             DbHelper db = new DbHelper();
             dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
 
-
         }
 
         private void FormClienti_FormClosed(object sender, FormClosedEventArgs e)
@@ -107,6 +106,48 @@ namespace Proiect_Final
                 {
                     MessageBox.Show("Eroare la ștergerea clientului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnUpdateCl_Click(object sender, EventArgs e)
+        {
+            if (selectedClientId == 0)
+            {
+                MessageBox.Show("Selectați un client pentru a actualiza!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtNumePrenume.Text) || string.IsNullOrWhiteSpace(txtEmailCl.Text) || string.IsNullOrWhiteSpace(txtDataNasterii.Text) || string.IsNullOrWhiteSpace(txtTelefonCl.Text))
+            {
+                MessageBox.Show("Toate câmpurile trebuie completate!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!txtEmailCl.Text.Contains("@"))
+            {
+                MessageBox.Show("Adresa de email nu este validă!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTelefonCl.Text.Length != 10)
+            {
+                MessageBox.Show("Numărul de telefon trebuie să aibă 10 cifre!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                DbHelper db = new DbHelper();
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@IdClient", selectedClientId),
+                    new SqlParameter("@NumePrenume", txtNumePrenume.Text),
+                    new SqlParameter("@Telefon", txtTelefonCl.Text),
+                    new SqlParameter("@DataNasterii", DateTime.Parse(txtDataNasterii.Text)),
+                    new SqlParameter("@Email", txtEmailCl.Text)
+                };
+                db.Execute("UPDATE Clienti SET NumePrenume = @NumePrenume, Telefon = @Telefon, DataNasterii = @DataNasterii, Email = @Email WHERE IdClient = @IdClient", parameters);
+                dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare la actualizarea clientului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
