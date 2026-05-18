@@ -64,7 +64,7 @@ namespace Proiect_Final
                 MessageBox.Show("Numărul de telefon trebuie să aibă 10 cifre!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            DbHelper db = new DbHelper();  
+            DbHelper db = new DbHelper();
             int nextId = Convert.ToInt32(db.GetScalar("SELECT ISNULL(MAX(IdClient), 0) + 1 FROM Clienti"));
 
             SqlParameter[] parameters = new SqlParameter[]
@@ -79,6 +79,35 @@ namespace Proiect_Final
             db.Execute("INSERT INTO Clienti (IdClient, NumePrenume, Telefon, DataNasterii, Email) VALUES (@IdClient, @NumePrenume, @Telefon, @DataNasterii, @Email)", parameters);
 
             dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
+        }
+
+        private void btnDeleteCl_Click(object sender, EventArgs e)
+        {
+            if (selectedClientId == 0)
+            {
+                MessageBox.Show("Selectați un client pentru a șterge!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult result = MessageBox.Show("Sunteți sigur că doriți să ștergeți acest client?", "Confirmare", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    DbHelper db = new DbHelper();
+                    SqlParameter[] parameters = new SqlParameter[]
+                    {
+                        new SqlParameter("@IdClient", selectedClientId)
+                    };
+                    db.Execute("DELETE FROM Clienti WHERE IdClient = @IdClient", parameters);
+                    dgvClienti.DataSource = db.GetData("SELECT * FROM Clienti");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Eroare la ștergerea clientului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
