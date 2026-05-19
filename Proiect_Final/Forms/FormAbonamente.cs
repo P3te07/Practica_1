@@ -51,5 +51,38 @@ namespace Proiect_Final
             txtPretAb.Text = row.Cells["Pret"].Value?.ToString() ?? "";
             txtGradAb.Text = row.Cells["GradAcces"].Value?.ToString() ?? "";
         }
+
+        private void btnAdaugaAb_Click(object sender, EventArgs e)
+        {
+            int nextId = Convert.ToInt32(new DbHelper().GetScalar("SELECT ISNULL(MAX(IdAbonament), 0) + 1 FROM Abonamente"));
+            if (string.IsNullOrWhiteSpace(txtTipAb.Text) || string.IsNullOrWhiteSpace(txtPretAb.Text) || string.IsNullOrWhiteSpace(txtGradAb.Text))
+            {
+                MessageBox.Show("Toate câmpurile trebuie completate!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (decimal.Parse(txtPretAb.Text) == 0)
+            {
+                MessageBox.Show("Prețul nu poate fi zero!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DbHelper db = new DbHelper();
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@IdAbonament", nextId),
+                new SqlParameter("@Tip", txtTipAb.Text.Trim()),
+                new SqlParameter("@Pret", decimal.Parse(txtPretAb.Text.Trim())),
+                new SqlParameter("@GradAcces", txtGradAb.Text.Trim())
+                };
+                db.Execute("INSERT INTO Abonamente (IdAbonament, Tip, Pret, GradAcces) VALUES (@IdAbonament, @Tip, @Pret, @GradAcces)", parameters);
+                dgvAbonamente.DataSource = db.GetData("SELECT * FROM Abonamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare la adăugarea abonamentului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
