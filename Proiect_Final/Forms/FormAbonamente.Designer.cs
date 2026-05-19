@@ -62,6 +62,7 @@
             btnDeleteAb.TabIndex = 28;
             btnDeleteAb.Text = "Sterge";
             btnDeleteAb.UseVisualStyleBackColor = true;
+            btnDeleteAb.Click += btnStergeAb_Click;
             // 
             // btnModificaAb
             // 
@@ -132,6 +133,7 @@
             dgvAbonamente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAbonamente.Location = new Point(16, 89);
             dgvAbonamente.Name = "dgvAbonamente";
+            dgvAbonamente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAbonamente.Size = new Size(735, 211);
             dgvAbonamente.TabIndex = 20;
             dgvAbonamente.CellClick += dgvAbonamente_CellClick;

@@ -84,5 +84,39 @@ namespace Proiect_Final
                 MessageBox.Show("Eroare la adăugarea abonamentului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnStergeAb_Click(object sender, EventArgs e)
+        {
+            if (dgvAbonamente.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selectați un abonament pentru ștergere!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int idToDelete = Convert.ToInt32(dgvAbonamente.SelectedRows[0].Cells["IdAbonament"].Value);
+            DbHelper db = new DbHelper();
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@IdAbonament", idToDelete)
+                };
+                DialogResult result = MessageBox.Show("Sunteți sigur că doriți să ștergeți acest abonament?", "Confirmare ștergere", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    db.Execute("DELETE FROM Abonamente WHERE IdAbonament = @IdAbonament", parameters);
+                    dgvAbonamente.DataSource = db.GetData("SELECT * FROM Abonamente");
+                    MessageBox.Show("Stergerea a fost executata cu succes", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ștergerea a fost anulată.", "Anulat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare la ștergerea abonamentului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }
