@@ -148,6 +148,7 @@
             btnRefreshAb.TabIndex = 19;
             btnRefreshAb.Text = "Refresh";
             btnRefreshAb.UseVisualStyleBackColor = true;
+            btnRefreshAb.Click += btnRefreshAb_Click;
             // 
             // btnSearchAb
             // 
@@ -157,6 +158,7 @@
             btnSearchAb.TabIndex = 18;
             btnSearchAb.Text = "Cauta";
             btnSearchAb.UseVisualStyleBackColor = true;
+            btnSearchAb.Click += btnSearchAb_Click;
             // 
             // FormAbonamente
             // 

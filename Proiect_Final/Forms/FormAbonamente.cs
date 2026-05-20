@@ -139,7 +139,7 @@ namespace Proiect_Final
                 MessageBox.Show("Gradul de acces trebuie specificat", "Error");
                 return;
             }
-            if(string.IsNullOrWhiteSpace(txtPretAb.Text) || decimal.Parse(txtPretAb.Text) < 0)
+            if (string.IsNullOrWhiteSpace(txtPretAb.Text) || decimal.Parse(txtPretAb.Text) < 0)
             {
                 MessageBox.Show("Pretul nu poate lipsi sau fi negativ", "Error");
                 return;
@@ -157,10 +157,32 @@ namespace Proiect_Final
                 dgvAbonamente.DataSource = db.GetData("SELECT * FROM Abonamente");
                 MessageBox.Show("Datele au fost modificate cu succes", "Success");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("A aparut o eroare la modificarea datelor", ex.Message);
             }
+        }
+
+        private void btnRefreshAb_Click(object sender, EventArgs e)
+        {
+            DbHelper db = new DbHelper();
+            dgvAbonamente.DataSource = db.GetData("SELECT * FROM Abonamente");
+        }
+
+        private void btnSearchAb_Click(object sender, EventArgs e)
+        {
+            string search = txtSearchAb.Text.Trim();
+            if (string.IsNullOrEmpty(search))
+            {
+                MessageBox.Show("Introduceți un termen de căutare!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DbHelper db = new DbHelper();
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@search", $"%{search}%")
+            };
+            dgvAbonamente.DataSource = db.GetData("SELECT * FROM Abonamente WHERE Tip LIKE @search OR GradAcces LIKE @search", parameters);
         }
     }
 }
