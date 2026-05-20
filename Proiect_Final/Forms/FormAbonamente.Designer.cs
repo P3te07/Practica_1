@@ -72,6 +72,7 @@
             btnModificaAb.TabIndex = 27;
             btnModificaAb.Text = "Modifica";
             btnModificaAb.UseVisualStyleBackColor = true;
+            btnModificaAb.Click += btnModificaAb_Click;
             // 
             // txtGradAb
             // 

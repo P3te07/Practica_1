@@ -14,6 +14,8 @@ namespace Proiect_Final
     public partial class FormAbonamente : Form
     {
         public int selectedAbonamentId = 0;
+        int nextId = Convert.ToInt32(new DbHelper().GetScalar("SELECT ISNULL(MAX(IdAbonament), 0) + 1 FROM Abonamente"));
+
         public FormAbonamente()
         {
             InitializeComponent();
@@ -50,11 +52,12 @@ namespace Proiect_Final
             txtTipAb.Text = row.Cells["Tip"].Value?.ToString() ?? "";
             txtPretAb.Text = row.Cells["Pret"].Value?.ToString() ?? "";
             txtGradAb.Text = row.Cells["GradAcces"].Value?.ToString() ?? "";
+
+            selectedAbonamentId = Convert.ToInt32(row.Cells["IdAbonament"].Value);
         }
 
         private void btnAdaugaAb_Click(object sender, EventArgs e)
         {
-            int nextId = Convert.ToInt32(new DbHelper().GetScalar("SELECT ISNULL(MAX(IdAbonament), 0) + 1 FROM Abonamente"));
             if (string.IsNullOrWhiteSpace(txtTipAb.Text) || string.IsNullOrWhiteSpace(txtPretAb.Text) || string.IsNullOrWhiteSpace(txtGradAb.Text))
             {
                 MessageBox.Show("Toate câmpurile trebuie completate!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,7 +119,48 @@ namespace Proiect_Final
             {
                 MessageBox.Show("Eroare la ștergerea abonamentului: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+        }
+
+        private void btnModificaAb_Click(object sender, EventArgs e)
+        {
+            if (selectedAbonamentId == 0)
+            {
+                MessageBox.Show("Selectati un abonament pentru a-l modifica", "Error", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtTipAb.Text))
+            {
+                MessageBox.Show("Tipul abonamentului trebuie specificat", "Error");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtGradAb.Text))
+            {
+                MessageBox.Show("Gradul de acces trebuie specificat", "Error");
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(txtPretAb.Text) || decimal.Parse(txtPretAb.Text) < 0)
+            {
+                MessageBox.Show("Pretul nu poate lipsi sau fi negativ", "Error");
+                return;
+            }
+            try
+            {
+                DbHelper db = new DbHelper();
+                SqlParameter[] parameters = new SqlParameter[] {
+                    new SqlParameter("@IdAbonament", selectedAbonamentId),
+                    new SqlParameter("@Tip", txtTipAb.Text.Trim()),
+                    new SqlParameter("@Pret", decimal.Parse(txtPretAb.Text.Trim())),
+                    new SqlParameter("@GradAcces", txtGradAb.Text.Trim())};
+
+                db.Execute("UPDATE Abonamente SET Tip = @Tip, Pret = @Pret, GradAcces = @GradAcces WHERE IdAbonament = @IdAbonament", parameters);
+                dgvAbonamente.DataSource = db.GetData("SELECT * FROM Abonamente");
+                MessageBox.Show("Datele au fost modificate cu succes", "Success");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("A aparut o eroare la modificarea datelor", ex.Message);
+            }
         }
     }
 }
