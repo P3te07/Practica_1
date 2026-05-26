@@ -161,6 +161,7 @@
             btnRefreshIn.TabIndex = 19;
             btnRefreshIn.Text = "Refresh";
             btnRefreshIn.UseVisualStyleBackColor = true;
+            btnRefreshIn.Click += btnRefreshIn_Click;
             // 
             // btnSearchIn
             // 
@@ -170,6 +171,7 @@
             btnSearchIn.TabIndex = 18;
             btnSearchIn.Text = "Cauta";
             btnSearchIn.UseVisualStyleBackColor = true;
+            btnSearchIn.Click += btnCautaIn_Click;
             // 
             // FormInregistrari
             // 

@@ -1,12 +1,9 @@
-﻿using Proiect_Final.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using System;
+using Proiect_Final.Data;
+using System.Drawing.Text;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace Proiect_Final
@@ -23,6 +20,23 @@ namespace Proiect_Final
         {
             DbHelper db = new DbHelper();
             dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
+        }
+
+        private void btnRefreshIn_Click(object sender, EventArgs e)
+        {
+            DbHelper db = new DbHelper();
+            dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
+        }
+
+        private void btnCautaIn_Click(object sender, EventArgs e)
+        {
+            DbHelper db = new DbHelper();
+            string search = txtSearchIn.Text.Trim();
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Search", "%" + search + "%")
+            };
+            dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament WHERE DataStart LIKE @search OR DataFinish LIKE @search",parameters);
         }
 
         private void FormInregistrari_FormClosed(object sender, FormClosedEventArgs e)
