@@ -36,7 +36,7 @@ namespace Proiect_Final
             {
                 new SqlParameter("@Search", "%" + search + "%")
             };
-            dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament WHERE DataStart LIKE @search OR DataFinish LIKE @search",parameters);
+            dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament WHERE DataStart LIKE @search OR DataFinish LIKE @search", parameters);
         }
 
         private void FormInregistrari_FormClosed(object sender, FormClosedEventArgs e)
@@ -51,12 +51,39 @@ namespace Proiect_Final
                 return;
             }
             DataGridViewRow selectedRow = dgvInregistrari.SelectedRows[0];
-            
+
             txtIdClient.Text = selectedRow.Cells["IdClient"].Value.ToString() ?? "";
             txtIdAbonament.Text = selectedRow.Cells["IdAbonament"].Value.ToString() ?? "";
             txtDataStart.Text = selectedRow.Cells["DataStart"].Value.ToString() ?? "";
             txtDataFinish.Text = selectedRow.Cells["DataFinish"].Value.ToString() ?? "";
             selectedInregistrareId = Convert.ToInt32(selectedRow.Cells["IdInregistrare"].Value);
+        }
+
+        private void btnAdaugaIn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtIdClient.Text))
+            {
+                MessageBox.Show("Id-ul clientului nu poate lipsi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrEmpty(txtIdAbonament.Text))
+            {
+                MessageBox.Show("Id-ul abonamentului nu poate lipsi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DbHelper db = new DbHelper();
+            int nextId = Convert.ToInt32(db.GetScalar("SELECT ISNULL(MAX(Id), 0) + 1 FROM InregistrareAbonament"));
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Id", nextId),
+                new SqlParameter("@IdClient", txtIdClient.Text.Trim()),
+                new SqlParameter("@IdAbonament", txtIdAbonament.Text.Trim()),
+                new SqlParameter("@DataStart", txtDataStart.Text.Trim()),
+                new SqlParameter("@DataFinish", txtDataFinish.Text.Trim())
+            };
+
+            db.Execute("INSERT INTO InregistrareAbonament (Id, IdClient, IdAbonament, DataStart, DataFinish) VALUES (@Id, @IdClient, @IdAbonament, @DataStart, @DataFinish)", parameters);
+            dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
         }
     }
 }

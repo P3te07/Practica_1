@@ -54,6 +54,7 @@
             btnAdaugaIn.TabIndex = 31;
             btnAdaugaIn.Text = "Adauga";
             btnAdaugaIn.UseVisualStyleBackColor = true;
+            btnAdaugaIn.Click += btnAdaugaIn_Click;
             // 
             // btnDeleteIn
             // 
