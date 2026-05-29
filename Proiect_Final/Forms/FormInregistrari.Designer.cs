@@ -64,6 +64,7 @@
             btnDeleteIn.TabIndex = 30;
             btnDeleteIn.Text = "Sterge";
             btnDeleteIn.UseVisualStyleBackColor = true;
+            btnDeleteIn.Click += btnDeleteIn_Click;
             // 
             // btnModificaIn
             // 

@@ -85,5 +85,34 @@ namespace Proiect_Final
             db.Execute("INSERT INTO InregistrareAbonament (Id, IdClient, IdAbonament, DataStart, DataFinish) VALUES (@Id, @IdClient, @IdAbonament, @DataStart, @DataFinish)", parameters);
             dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
         }
+
+        private void btnDeleteIn_Click(object sender, EventArgs e)
+        {
+            if (selectedInregistrareId == 0)
+            {
+                MessageBox.Show("Selectați o înregistrare pentru a o șterge", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            DialogResult result = MessageBox.Show("Sunteți sigur că doriți să ștergeți această înregistrare?", "Confirmare", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    DbHelper db = new DbHelper();
+
+                    SqlParameter[] parameters = new SqlParameter[] {
+                    new SqlParameter("@Id", selectedInregistrareId)
+                    };
+                    db.Execute("DELETE FROM InregistrareAbonament WHERE Id = @Id", parameters);
+                    dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
+                    MessageBox.Show("Înregistrarea a fost ștearsă cu succes!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("A apărut o eroare la ștergerea înregistrării. Asigurați-vă că nu există dependențe care împiedică ștergerea.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
