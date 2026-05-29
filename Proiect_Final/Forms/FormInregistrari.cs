@@ -56,7 +56,7 @@ namespace Proiect_Final
             txtIdAbonament.Text = selectedRow.Cells["IdAbonament"].Value.ToString() ?? "";
             txtDataStart.Text = selectedRow.Cells["DataStart"].Value.ToString() ?? "";
             txtDataFinish.Text = selectedRow.Cells["DataFinish"].Value.ToString() ?? "";
-            selectedInregistrareId = Convert.ToInt32(selectedRow.Cells["IdInregistrare"].Value);
+            selectedInregistrareId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
         }
 
         private void btnAdaugaIn_Click(object sender, EventArgs e)
@@ -114,5 +114,33 @@ namespace Proiect_Final
                 }
             }
         }
+
+        private void btnUpdateIn_Click(object sender, EventArgs e)
+        {
+            if (selectedInregistrareId == 0)
+            {
+                MessageBox.Show("Selectați o înregistrare pentru a o actualiza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                DbHelper db = new DbHelper();
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@Id", selectedInregistrareId),
+                new SqlParameter("@IdClient", txtIdClient.Text.Trim()),
+                new SqlParameter("@IdAbonament", txtIdAbonament.Text.Trim()),
+                new SqlParameter("@DataStart", txtDataStart.Text.Trim()),
+                new SqlParameter("@DataFinish", txtDataFinish.Text.Trim())
+                };
+                db.Execute("UPDATE InregistrareAbonament SET IdClient = @IdClient, IdAbonament = @IdAbonament, DataStart = @DataStart, DataFinish = @DataFinish WHERE Id = @Id", parameters);
+                dgvInregistrari.DataSource = db.GetData("SELECT * FROM InregistrareAbonament");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A apărut o eroare la actualizarea înregistrării. Asigurați-vă că toate câmpurile sunt completate corect și că nu există dependențe care împiedică actualizarea.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            }
     }
 }

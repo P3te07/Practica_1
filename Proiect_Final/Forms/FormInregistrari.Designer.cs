@@ -74,6 +74,7 @@
             btnModificaIn.TabIndex = 29;
             btnModificaIn.Text = "Modifica";
             btnModificaIn.UseVisualStyleBackColor = true;
+            btnModificaIn.Click += btnUpdateIn_Click;
             // 
             // txtDataFinish
             // 
