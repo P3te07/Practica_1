@@ -33,8 +33,8 @@
             btnModificaIn = new Button();
             txtDataFinish = new TextBox();
             txtDataStart = new TextBox();
-            txtIdAbonament = new TextBox();
-            txtIdClient = new TextBox();
+            txtTipAbonamentIn = new TextBox();
+            txtNumePrenumeIn = new TextBox();
             txtSearchIn = new TextBox();
             label9 = new Label();
             label10 = new Label();
@@ -43,7 +43,15 @@
             dgvInregistrari = new DataGridView();
             btnRefreshIn = new Button();
             btnSearchIn = new Button();
+            label1 = new Label();
+            txtPretAbonamentIn = new TextBox();
+            numericIdClient = new NumericUpDown();
+            numericIdAbonament = new NumericUpDown();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericIdClient).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericIdAbonament).BeginInit();
             SuspendLayout();
             // 
             // btnAdaugaIn
@@ -90,19 +98,19 @@
             txtDataStart.Size = new Size(145, 23);
             txtDataStart.TabIndex = 25;
             // 
-            // txtIdAbonament
+            // txtTipAbonamentIn
             // 
-            txtIdAbonament.Location = new Point(136, 381);
-            txtIdAbonament.Name = "txtIdAbonament";
-            txtIdAbonament.Size = new Size(145, 23);
-            txtIdAbonament.TabIndex = 23;
+            txtTipAbonamentIn.Location = new Point(136, 381);
+            txtTipAbonamentIn.Name = "txtTipAbonamentIn";
+            txtTipAbonamentIn.Size = new Size(145, 23);
+            txtTipAbonamentIn.TabIndex = 23;
             // 
-            // txtIdClient
+            // txtNumePrenumeIn
             // 
-            txtIdClient.Location = new Point(136, 329);
-            txtIdClient.Name = "txtIdClient";
-            txtIdClient.Size = new Size(145, 23);
-            txtIdClient.TabIndex = 21;
+            txtNumePrenumeIn.Location = new Point(136, 329);
+            txtNumePrenumeIn.Name = "txtNumePrenumeIn";
+            txtNumePrenumeIn.Size = new Size(145, 23);
+            txtNumePrenumeIn.TabIndex = 21;
             // 
             // txtSearchIn
             // 
@@ -134,18 +142,18 @@
             label11.AutoSize = true;
             label11.Location = new Point(19, 387);
             label11.Name = "label11";
-            label11.Size = new Size(83, 15);
+            label11.Size = new Size(90, 15);
             label11.TabIndex = 24;
-            label11.Text = "Id Abonament";
+            label11.Text = "Tip Abonament";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Location = new Point(19, 335);
             label12.Name = "label12";
-            label12.Size = new Size(51, 15);
+            label12.Size = new Size(88, 15);
             label12.TabIndex = 22;
-            label12.Text = "Id Client";
+            label12.Text = "NumePrenume";
             // 
             // dgvInregistrari
             // 
@@ -154,7 +162,7 @@
             dgvInregistrari.Name = "dgvInregistrari";
             dgvInregistrari.Size = new Size(735, 211);
             dgvInregistrari.TabIndex = 20;
-            dgvInregistrari.SelectionChanged += dgvInregistrari_SelectionChanged;
+            dgvInregistrari.CellClick += dgvInregistrari_CellClick;
             // 
             // btnRefreshIn
             // 
@@ -176,18 +184,76 @@
             btnSearchIn.UseVisualStyleBackColor = true;
             btnSearchIn.Click += btnCautaIn_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(19, 426);
+            label1.Name = "label1";
+            label1.Size = new Size(28, 15);
+            label1.TabIndex = 32;
+            label1.Text = "Pret";
+            // 
+            // txtPretAbonamentIn
+            // 
+            txtPretAbonamentIn.Location = new Point(136, 423);
+            txtPretAbonamentIn.Name = "txtPretAbonamentIn";
+            txtPretAbonamentIn.Size = new Size(145, 23);
+            txtPretAbonamentIn.TabIndex = 33;
+            // 
+            // numericIdClient
+            // 
+            numericIdClient.Location = new Point(392, 418);
+            numericIdClient.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericIdClient.Name = "numericIdClient";
+            numericIdClient.Size = new Size(46, 23);
+            numericIdClient.TabIndex = 34;
+            numericIdClient.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // numericIdAbonament
+            // 
+            numericIdAbonament.Location = new Point(548, 418);
+            numericIdAbonament.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericIdAbonament.Name = "numericIdAbonament";
+            numericIdAbonament.Size = new Size(46, 23);
+            numericIdAbonament.TabIndex = 35;
+            numericIdAbonament.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(338, 423);
+            label2.Name = "label2";
+            label2.Size = new Size(48, 15);
+            label2.TabIndex = 36;
+            label2.Text = "IdClient";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(462, 423);
+            label3.Name = "label3";
+            label3.Size = new Size(80, 15);
+            label3.TabIndex = 37;
+            label3.Text = "IdAbonament";
+            // 
             // FormInregistrari
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(numericIdAbonament);
+            Controls.Add(numericIdClient);
+            Controls.Add(txtPretAbonamentIn);
+            Controls.Add(label1);
             Controls.Add(btnAdaugaIn);
             Controls.Add(btnDeleteIn);
             Controls.Add(btnModificaIn);
             Controls.Add(txtDataFinish);
             Controls.Add(txtDataStart);
-            Controls.Add(txtIdAbonament);
-            Controls.Add(txtIdClient);
+            Controls.Add(txtTipAbonamentIn);
+            Controls.Add(txtNumePrenumeIn);
             Controls.Add(txtSearchIn);
             Controls.Add(label9);
             Controls.Add(label10);
@@ -200,6 +266,8 @@
             Text = "FormInregistrari";
             Load += FormInregistrari_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInregistrari).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericIdClient).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericIdAbonament).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,8 +278,8 @@
         private Button btnModificaIn;
         private TextBox txtDataFinish;
         private TextBox txtDataStart;
-        private TextBox txtIdAbonament;
-        private TextBox txtIdClient;
+        private TextBox txtTipAbonamentIn;
+        private TextBox txtNumePrenumeIn;
         private TextBox txtSearchIn;
         private Label label9;
         private Label label10;
@@ -220,5 +288,11 @@
         private DataGridView dgvInregistrari;
         private Button btnRefreshIn;
         private Button btnSearchIn;
+        private Label label1;
+        private TextBox txtPretAbonamentIn;
+        private NumericUpDown numericIdClient;
+        private NumericUpDown numericIdAbonament;
+        private Label label2;
+        private Label label3;
     }
 }
