@@ -40,8 +40,8 @@ namespace Proiect_Final
                                 GROUP BY c.NumePrenume
                                 ORDER BY TotalAchitat DESC";
 
-                dgvRaport.DataSource = db.GetData(query);
-                dgvRaport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvReport.DataSource = db.GetData(query);
+                dgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {

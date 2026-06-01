@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvRaport = new DataGridView();
+            dgvReport = new DataGridView();
             label2 = new Label();
             btnRefreshRepo = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvRaport).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReport).BeginInit();
             SuspendLayout();
             // 
-            // dgvRaport
+            // dgvReport
             // 
-            dgvRaport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRaport.Location = new Point(12, 48);
-            dgvRaport.Name = "dgvRaport";
-            dgvRaport.Size = new Size(776, 319);
-            dgvRaport.TabIndex = 0;
+            dgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReport.Location = new Point(12, 48);
+            dgvReport.Name = "dgvReport";
+            dgvReport.Size = new Size(776, 319);
+            dgvReport.TabIndex = 0;
             // 
             // label2
             // 
@@ -68,17 +68,17 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnRefreshRepo);
             Controls.Add(label2);
-            Controls.Add(dgvRaport);
+            Controls.Add(dgvReport);
             Name = "FormReport";
             Text = "FormReport";
-            ((System.ComponentModel.ISupportInitialize)dgvRaport).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReport).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvRaport;
+        private DataGridView dgvReport;
         private Label label2;
         private Button btnRefreshRepo;
     }
