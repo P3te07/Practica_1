@@ -76,6 +76,7 @@
             btnMainReport.TabIndex = 3;
             btnMainReport.Text = "Raport";
             btnMainReport.UseVisualStyleBackColor = true;
+            btnMainReport.Click += btnMenuRaport_Click;
             // 
             // FormMain
             // 

@@ -33,6 +33,12 @@ namespace Proiect_Final
             Inregistrari.Show();
         }
 
+        private void btnMenuRaport_Click(object sender, EventArgs e)
+        {
+            FormReport Report = new FormReport();
+            Report.Show();
+        }
+
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
